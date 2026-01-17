@@ -1,0 +1,22 @@
+{
+    "Group": "fr.mydao",
+    "Name": "WarpStone",
+    "Version": "0.0.2",
+    "Description": "An example plugin for HyTale!",
+    "Authors": [
+        {
+            "Name": "Mydao"
+        }
+    ],
+    "Website": "hugothiebaut.fr",
+    "ServerVersion": "*",
+    "Dependencies": {
+        
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "fr.mydao.plugin.WarpStone",
+    "IncludesAssetPack": true
+}
