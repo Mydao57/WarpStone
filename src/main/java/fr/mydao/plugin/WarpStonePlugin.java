@@ -1,11 +1,10 @@
 package fr.mydao.plugin;
 
 import com.hypixel.hytale.logger.HytaleLogger;
-import com.hypixel.hytale.protocol.InteractionType;
-import com.hypixel.hytale.server.core.Message;
-import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import fr.mydao.plugin.interaction.WarpStoneOpenInteraction;
 
 import javax.annotation.Nonnull;
 
@@ -20,36 +19,12 @@ public class WarpStonePlugin extends JavaPlugin {
 
     @Override
     protected void setup() {
-        LOGGER.atInfo().log("Setting up WarpStone plugin");
+        LOGGER.atInfo().log("Setting up plugin " + this.getName());
 
-        getEventRegistry().registerGlobal(PlayerInteractEvent.class, this::onPlayerInteract);
+        getCodecRegistry(Interaction.CODEC).register(
+                "WarpStone_OpenInteraction",
+                WarpStoneOpenInteraction.class,
+                WarpStoneOpenInteraction.CODEC
+        );
     }
-
-    private void onPlayerInteract(PlayerInteractEvent event) {
-        try {
-            // clic droit / interaction
-            if (event.getActionType() != InteractionType.Primary) return;
-
-            if (event.getTargetBlock() == null) return;
-
-            var player = event.getPlayer();
-            var pos = event.getTargetBlock();
-
-            // DEBUG: log pour voir l’ID réel
-            LOGGER.atInfo().log(
-                    "Player " + player.getDisplayName() + " interacted with block at " + pos
-            );
-
-            // ⚠️ TODO (prochaine étape):
-            // - récupérer le BlockState
-            // - vérifier que c’est une WarpStone
-            // - ouvrir la vraie UI
-
-            event.setCancelled(true);
-
-            player.sendMessage(Message.parse("WarpStone cliquée ! (UI arrive)"));
-        } catch (Throwable t) {
-            LOGGER.atSevere().withCause(t).log("Error");
-        }
-        }
 }

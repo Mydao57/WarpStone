@@ -22,6 +22,13 @@
         "Weight": 1
       }
     ],
+    "Interactions": {
+      "Use": "WarpStone_Open",
+      "Primary": "Break_Container"
+    },
+    "Flags": {
+      "IsUsable": true
+    },
 
     "HitboxType": "Hitbox_Warp_Stone",
 
