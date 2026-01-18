@@ -1,7 +1,7 @@
 {
     "Group": "fr.mydao",
     "Name": "WarpStone",
-    "Version": "0.0.2",
+    "Version": "0.0.1",
     "Description": "An example plugin for HyTale!",
     "Authors": [
         {
@@ -17,6 +17,6 @@
         
     },
     "DisabledByDefault": false,
-    "Main": "fr.mydao.plugin.WarpStone",
+    "Main": "fr.mydao.plugin.WarpStonePlugin",
     "IncludesAssetPack": true
 }

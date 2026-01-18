@@ -1,0 +1,57 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Warp_Stone.name"
+  },
+
+  "ItemLevel": 3,
+  "Icon": "Icons/ItemsGenerated/WarpStone.png",
+  "Categories": ["Blocks.Soils"],
+  "PlayerAnimationsId": "Block",
+
+  "HitboxType": "Hitbox_Warp_Stone",
+
+  "BlockType": {
+    "Material": "Solid",
+    "Opacity": "Solid",
+
+    "DrawType": "Model",
+    "CustomModel": "Blocks/WarpStone/WarpStone.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/WarpStone/Warp_Stone_texture.png",
+        "Weight": 1
+      }
+    ],
+
+    "HitboxType": "Hitbox_Warp_Stone",
+
+    "BlockSoundSetId": "Stone",
+
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Soils",
+        "ItemId": "Soil_Dirt"
+      }
+    },
+
+    "TransitionToGroups": [
+      "Stone",
+      "Dirt",
+      "Dirt_Dark",
+      "Sand",
+      "Sand_White",
+      "Gravel",
+      "Wood"
+    ],
+    "TransitionToTag": "Fluid=Water",
+
+    "BiomeTintUp": 0,
+    "ParticleColor": "#eae8e8"
+  },
+
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [339.295, 229.107, 337.792],
+    "Translation": [0, -6]
+  }
+}
